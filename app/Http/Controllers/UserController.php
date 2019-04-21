@@ -22,7 +22,6 @@ class UserController extends BaseController
     public function create(Request $request)
     {
         $data = $request->only('name', 'email');
-
         $validator = Validator::make($data, UserValidation::RULES, UserValidation::MESSAGES);
 
         if ($validator->fails()) {
